@@ -1,0 +1,18 @@
+/**
+ * V1.0.0
+ * @param {character[]} letters
+ * @param {character} target
+ * @return {character}
+ */
+var nextGreatestLetter = function(letters, target) {
+    var targetCode = target.charCodeAt();
+    var codeArr = letters.map(x => x.charCodeAt());
+    var result = '';
+    for(var i=0;i<codeArr.length;i++){
+        if(codeArr[i]>targetCode){
+            result =  String.fromCharCode(codeArr[i])
+            return result;
+        }
+    }
+    return  String.fromCharCode(codeArr[0]) 
+};
