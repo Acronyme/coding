@@ -1,0 +1,18 @@
+
+
+/**
+ *V1.0.0
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+  var arr=[];
+  for(var i=nums.length-1;i>=0;i--){
+      if(arr.indexOf(nums[i])==-1){
+          arr.push(nums[i]);
+      }else{
+          nums.splice(i,1);
+      }
+  }
+    return nums.length;
+};
