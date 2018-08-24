@@ -16,3 +16,20 @@ var removeDuplicates = function(nums) {
   }
     return nums.length;
 };
+
+/**
+ *V1.1.0
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    var hashObj = {};
+    for(var i=nums.length;i>=0;i--){
+        if(!hashObj[nums[i]]){
+            hashObj[nums[i]] = true;
+        }else{
+            nums.splice(i,1);
+        }
+    }
+    return nums.length;
+};
