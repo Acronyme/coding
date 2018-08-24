@@ -33,3 +33,12 @@ var removeDuplicates = function(nums) {
     }
     return nums.length;
 };
+/**
+ *V1.2.0
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    var map = new Map();
+    return nums.filter(x=>!map.has(x) && map.set(x,true)).length
+};
