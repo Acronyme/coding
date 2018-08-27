@@ -1,0 +1,19 @@
+/**
+ * V1.0.0
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersect = function(nums1, nums2) {
+    var interArr = [];
+    for(var i=nums1.length-1;i>=0;i--){
+        for(var j=nums2.length-1;j>=0;j--){
+            if(nums2[j]==nums1[i]){
+                interArr.push(nums1[i]);
+                nums1.splice(i,1);
+                nums2.splice(j,1);
+            }
+        }
+    }
+    return interArr;
+};
