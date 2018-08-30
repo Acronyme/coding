@@ -24,3 +24,25 @@ var findContentChildren = function(g, s) {
     }
     return count;
 };
+
+/**
+ * V1.1.0
+ * @param {number[]} g
+ * @param {number[]} s
+ * @return {number}
+ */
+var findContentChildren = function(g, s) {
+    var childrenLen = g.sort(function(a,b){return a-b}).length;
+    var cookieLen = s.sort(function(a,b){return a-b}).length;
+    var count = 0,curIndex = 0;
+    for(var i=0;i<cookieLen;i++){
+       if(s[i]>=g[curIndex]){
+           count++;
+           curIndex++;
+       }
+       if(curIndex==childrenLen){
+           break;
+       }
+    }
+    return count;
+};
