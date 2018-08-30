@@ -4,6 +4,7 @@
 你可以假设数组是非空的，并且给定的数组总是存在众数。
 */
 /**
+ * V1.0.0 
  * @param {number[]} nums
  * @return {number}
  */
@@ -17,4 +18,26 @@ var majorityElement = function(nums) {
             return cur;
         }
     }
+};
+
+/**
+ * V1.1.0 
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+   if(nums.length==1){return nums[0]};
+   var map = new Map();
+   var halfLen = parseInt(nums.length/2);
+   for(var i=0;i<nums.length;i++){
+       if(map.has(nums[i])){
+           map.set(nums[i],(map.get(nums[i])+1));
+           if(map.get(nums[i])>halfLen){
+               return nums[i];
+           }
+       }else{
+           map.set(nums[i],1);
+       }
+       
+   }
 };
