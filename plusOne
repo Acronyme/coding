@@ -12,6 +12,7 @@
 解释: 输入数组表示数字 10。
 */
 /**
+ * V1.0.0
  * @param {number[]} digits
  * @return {number[]}
  */
@@ -30,4 +31,27 @@ var plusOne = function(digits) {
     }
     return digits
     
+};
+
+/**
+ * V1.1.0
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function(digits) {
+    var len = digits.length;
+    digits[len-1]+=1;
+    var flag = digits[len-1] == 10 ? true : false;
+    if(!flag){return digits};
+    for(var i=len-1;i>=0;i--){
+        if(digits[i]>9){
+            digits[i] = 0;
+            if(i==0){
+                digits.unshift(1);
+            }else{
+                digits[i-1] +=1;
+            }
+        }
+      }
+    return digits   
 };
