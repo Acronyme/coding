@@ -1,0 +1,15 @@
+/*
+  给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
+  输入: "A man, a plan, a canal: Panama"
+  输出: true
+*/
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    if(s==''){return true};
+    var pattern = /[0-9a-z]/i; 
+    var strArr = s.split('').filter(x => pattern.test(x))
+    return strArr.join('').toLowerCase() == strArr.reverse().join('').toLowerCase() ? true : false;
+};
