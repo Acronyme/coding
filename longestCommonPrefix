@@ -1,0 +1,30 @@
+/*
+编写一个函数来查找字符串数组中的最长公共前缀。
+
+如果不存在公共前缀，返回空字符串 ""。
+
+输入: ["flower","flow","flight"]
+输出: "fl"
+*/
+
+/**
+ * V1.0.0
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+    if(strs.length==0){return ""};
+    var curWord = strs[0].split('');
+    var result = '';
+    for(var i=0;i<curWord.length;i++){
+    var boo = strs.every(function(item,index){
+         if(item.charAt(i)==curWord[i]){return true}
+      })
+    if(boo){
+        result += curWord[i];
+     }else{
+         break;
+     }
+    }
+    return result;
+}
