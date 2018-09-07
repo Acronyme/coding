@@ -1,0 +1,16 @@
+/*
+ 给定两个大小为 m 和 n 的有序数组 nums1 和 nums2 。
+ 请找出这两个有序数组的中位数。
+*/
+
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ */
+var findMedianSortedArrays = function(nums1, nums2) {
+   var sortedArr = nums1.concat(nums2).sort((a,b) => a-b);
+   var len = sortedArr.length;
+   var result = (len % 2) == 0 ? (sortedArr[len/2 - 1] + sortedArr[len/2])/2 : sortedArr[parseInt(len/2)];
+   return result;
+};
